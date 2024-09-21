@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 소개
+    </title>
+    <style>
+        body { background-color: lightgrey; color: green;
+        margin-left: 40px; margin-right: 40px;}
+        h2 { text-align: center; color: blue; width: 100px; margin: 0 auto}
+        hr { height: 5px; border: solid grey;
+            background-color: gray;}
+        span { color: red; font-size: 20px; }
+        .hidden { display: none }
+    </style>
+    <script>
+        function show() {
+            document.getElementById("fig").src="MyPicture.png";
+            document.getElementById("imgDiv").classList.remove("hidden");
+        }
+        function hide() {
+            document.getElementById("fig").src="";
+            document.getElementById("imgDiv").classList.add("hidden");
+        }
+    </script>
+</head>
+<body>
+    <h2 onmouseover="show()" onmouseout="hide()">박상민</h2>
+    <hr>
+    <div id="imgDiv" class="hidden"><img id="fig"width="280" height="210"src="" ></div>
+    저는 대한민국에서 태어나서 컴퓨터 공학을 전공하는 학생입니다.
+    제가 제일 좋아하는 과목은 <span>웹 프로그래밍</span>이고, 
+    그 중에서도 <span>자바스크립트</span>를 제일 잘합니다. 
+</body>
+</html>
