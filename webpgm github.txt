@@ -1,0 +1,18 @@
+git
+
+git init(최초 레포지토리 연결 시)
+
+git remote add origin https://github.com/qkrtkdals962/ks-webpgm.git(깃허브 연결할때 *안씀*)
+
+git remote -v(위에 확인 용)
+-----
+
+git add .(변경된 파일 중 모든 파일 선택)
+
+git status(선택 파일 확인용)
+
+git reset(선택 파일 삭제용)
+
+git commit -m "예)최종본, 찐최종본"(커밋 쓸때)
+
+git push origin master(깃허브에 올리기)
