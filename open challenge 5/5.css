@@ -1,0 +1,37 @@
+html {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+header {
+    height: 45%;
+    background-color: yellow;
+    clear: both;
+}
+h1 {
+    margin: 0px;
+    text-align: center;
+}
+nav {
+    background-color: orange;
+    float: left;
+    height: 493%;
+    width: 15%;
+}
+section {
+    background-color: skyblue;
+    float: left;
+    height: 493%;
+    width: 85%;
+}
+footer {
+    clear: both;
+    background-color: magenta;
+    height: 8%;
+    width: 100%;
+}

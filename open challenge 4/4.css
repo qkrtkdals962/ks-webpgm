@@ -1,0 +1,17 @@
+header {
+    border-bottom-width: 1;
+    border-bottom-style: solid;
+}
+body { background-color: #f0f8ff; }
+h1 {text-align: center; color: brown; }
+p {font-size: 1em; font-family: 휴먼편지체; text-indent: 1em;}
+a {text-decoration: none; color: blue;}
+ul {border-style: dotted; border-width: 1;}
+h3 {color: blue; text-shadow: 1px 1px skyblue;}
+pre {color: darkgoldenrod; font-size: 1em;}
+footer {
+    background-color: orange;
+    width: 1200;
+    padding: 20px;
+    border-radius: 20px;
+}

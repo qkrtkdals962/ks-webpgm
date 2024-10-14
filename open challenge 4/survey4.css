@@ -1,0 +1,10 @@
+body { background-color: #f0f8ff; }
+h2 {text-align: center; color: brown; }
+p {font-size: 1em; font-family: 휴먼편지체; text-indent: 1em;}
+form {background-color: pink;}
+footer {
+    background-color: orange;
+    width: 1200;
+    padding: 8px;
+    border-radius: 20px;
+}

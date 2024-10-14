@@ -16,3 +16,38 @@ git reset(선택 파일 삭제용)
 git commit -m "예)최종본, 찐최종본"(커밋 쓸때)
 
 git push origin master(깃허브에 올리기)
+
+*중요* 코드에 작성 도움
+W3Schools
+emmet cheat sheet
+
+CSS3에서는 가장 중요한게 셀렉터
+<style>
+	h3 { color : brown; }
+</style>
+
+<h3 style = "color : brown"> 
+/*위와 동일 대신 밑의 코드는 해당 태그에만 적용*/
+셀렉터:h3
+프로퍼티:color
+값:brown
+div > strong 자식 셀렉터: div의 자식인 strong만 적용
+div strong 자손 셀렉터: div의 자손인 strong을 포함해서 그 후손 모두 				적용
+*:all
+?:one
+emmet cheat sheet
+
+<nav>
+	<ul>
+		<li>...</li>
+		<li>...</li>
+		<li>...</li>			=	nav>ul>li*5  TAB
+		<li>...</li>
+		<li>...</li>
+	</ul>
+</nav>
+
+수많은 AI를 사용할수있어야한다.
+canva-ppt사용시 스타일이나 어색한 부분 수정가능
+
+간단한자기소개서, 자기소개페이지 나만의 것으로 만들것
