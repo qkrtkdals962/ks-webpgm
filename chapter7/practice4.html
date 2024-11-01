@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방문 요일에 따라 변하는 웹사이트</title>
+</head>
+<body>
+    <h3>일요일은 pink, 다른 요일은 gold배경</h3>
+    <hr>
+    <script>
+        let n=new Date();
+        if(n.getDay() == 0)
+            document.body.style.backgroundColor = "pink";
+        else
+            document.body.style.backgroundColor = "gold";
+        document.write("오늘 : ");
+        document.write(n.getDate() + "일,");
+        switch (n.getDay()) {
+            case 0:
+                document.write("일");
+                break;
+            case 1:
+                document.write("월");
+                break;
+            case 2:
+                document.write("화");
+                break;
+            case 3:
+                document.write("수");
+                break;
+            case 4:
+                document.write("목");
+                break;
+            case 5:
+                document.write("금");
+                break;
+            case 6:
+                document.write("토");
+                break;
+        }
+        document.write("요일");
+    </script>
+</body>
+</html>

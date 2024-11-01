@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>큰 자리수와 낮은자리수 비교하기</title>
+</head>
+<body>
+    <h3>큰자리수와 낮은자리수 같은지 비교</h3>
+    <hr>
+    <script>
+        let n = prompt("숫자입력");
+        let firstn = n;
+        while(firstn>=10){
+            firstn = Math.floor(firstn/10);
+        }
+        let lastn = n % 10;
+        if(firstn == lastn){
+            document.write(n + ": 같음");
+        }
+        else{
+            document.write(n + ": 다름");
+        }
+    </script>
+</body>
+</html>

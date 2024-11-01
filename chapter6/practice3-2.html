@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document write()</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>document.write()로 만들기</h3>");
+        document.write("<hr>");
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        document.write("<th>n</th>");
+        for(let e = 0; e<=9; e++){
+            document.write("<td>" + e + "</td>");
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>n²</th>");
+        for(let e = 0; e<=9; e++){
+            document.write("<td>" + e*e + "</td>");
+        }
+        document.write("</tr>");
+    </script>
+</body>
+</html>
