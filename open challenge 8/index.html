@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>겜블링 게임</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 1px solid violet ;
+            background-color: blanchedalmond;
+        }
+        span {
+            color: blue;
+            font-size: 3em;
+        }
+        p.result {
+            color: red;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h3>겜블링 게임</h3>
+    <p>
+        각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+    </p>
+    <hr>
+    <div>
+        <span onclick="game(this)">0</span><span onclick="game(this)">0</span>
+        <span onclick="lastgame(this)">0</span>
+    </div>
+    <script>
+        function game(element){
+            let n = Math.random()*3;
+            let m = Math.floor(n);
+            element.textContent = m;
+        }
+        function lastgame(element){
+            let n = Math.random()*3;
+            let m = Math.floor(n);
+            element.textContent = m;
+
+            let answer = document.getElementsByTagName("span");
+            let firstanswer = answer[0].textContent;
+            let winning = true;
+            for (let i=1;i<answer.length;i++){
+                if(answer[i].textContent !== firstanswer){
+                    winning = false;
+                    break;
+                }
+            }
+
+            result = document.createElement("p");
+            result.classList.add("result");
+            if (winning) {
+                result.textContent = "success (click here to do again)";
+            } else {
+                result.textContent = "fail (click here to try again)";
+            }
+
+            result.addEventListener("click", function() {
+                resetGame();
+            });
+
+            document.body.appendChild(result);
+        }
+
+        function resetGame() {
+            let spans = document.getElementsByTagName("span");
+            for (let i = 0; i < spans.length; i++) {
+                spans[i].textContent = "0";
+            }
+            let result = document.querySelector("p.result");
+            if (result) {
+                result.remove();
+            }
+        }
+    </script>
+</body>
+</html>
