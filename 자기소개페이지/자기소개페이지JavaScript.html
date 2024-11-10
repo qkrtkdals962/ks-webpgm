@@ -1,0 +1,47 @@
+<HTML>
+    <head></head>
+    <body>
+        <script>
+            let title = document.createElement("title");
+            title.innerHTML = "자기소개페이지-자바스크립트";
+            let newh3 = document.createElement("h3");
+            newh3.innerHTML = "자기소개 페이지 만들기-js"
+            let newhr = document.createElement("hr");
+            let newp1 = document.createElement("p");
+            newp1.innerHTML = "안녕하세요. 저는 경성대학교 소프트웨어학과를 재학중인 박상민 입니다.";
+            let newp2 = document.createElement("p");
+            newp2.innerHTML = "저는 웹 프로그래밍 개발자가 되기 위해 대학교에서 공부를 하고 있습니다.";
+            let newp3 = document.createElement("p");
+            newp3.textContent = "제가 가장 좋아하는 과목은 ";
+    
+            let spanC = document.createElement("span");
+            spanC.textContent = "C언어";
+            spanC.style.color = "red";
+            spanC.style.fontSize = "1.5em";
+            newp3.appendChild(spanC);
+    
+            newp3.appendChild(document.createTextNode("와 "));
+    
+            let spanW = document.createElement("span");
+            spanW.textContent = "웹 프로그래밍";
+            spanW.style.color = "red";
+            spanW.style.fontSize = "1.5em";
+            newp3.appendChild(spanW);
+    
+            newp3.appendChild(document.createTextNode("입니다"));
+    
+            let newp4 = document.createElement("p");
+            newp4.innerHTML = "C언어는 가장 먼저 배운 언어이기도 하고 구조가 직관적이여서 C언어를 가장 좋아하고 웹 프로그래밍 또한 구조가 직관적이고 제가 만든 페이지를 보면서 성취감을 느낄 수 있기 때문입니다.";
+            let newp5 = document.createElement("p");
+            newp5.innerHTML = "저는 C언어를 사용하여 약74개의 프로그램을 제작, HTML을 사용하여 명품 프로그래밍 책의 chapter1~8 openchallenge1~8 제작했습니다.";
+            document.head.appendChild(title);
+            document.body.appendChild(newh3);
+            document.body.appendChild(newhr);
+            document.body.appendChild(newp1);
+            document.body.appendChild(newp2);
+            document.body.appendChild(newp3);
+            document.body.appendChild(newp4);
+            document.body.appendChild(newp5);
+        </script>
+    </body>
+</HTML>
