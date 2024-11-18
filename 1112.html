@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 그리기</title>
+    <script>
+        function center() {
+            let width = 600;
+            let height = 350;
+            let screenX = (window.screen.width - width) / 2;
+            let screenY = (window.screen.height - height) / 2;
+            window.resizeTo(width, height);
+            window.moveTo(screenX, screenY);
+        }
+    </script>
+</head>
+<body onload="center()">
+    <canvas id="myCanvas" style="background-color: aliceblue; width: 600px; height: 350px;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        context.beginPath();
+        context.moveTo(30,30);
+        context.lineTo(30,75);
+        context.lineTo(60,75);
+        context.lineTo(60,30);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(30,56);
+        context.lineTo(60,56);        
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(70,30);
+        context.lineTo(70,75);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(70,57);
+        context.lineTo(79,57);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(30,80);
+        context.lineTo(65,80);
+        context.lineTo(65,95);
+        context.strokeStyle="magenta";
+        context.stroke();
+        /*박*/
+
+        context.beginPath();
+        context.moveTo(88,68);
+        context.lineTo(110,38);
+        context.lineTo(132,68);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(135,30);
+        context.lineTo(135,70);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(135,55);
+        context.lineTo(145,55);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle="magenta";
+        context.arc(125, 83, 15, 0, 50, false);
+        context.stroke();
+        /*원그리기(135,70)*/
+        /*상*/
+        context.beginPath();
+        context.moveTo(155,30);
+        context.lineTo(200,30);
+        context.lineTo(200,65);
+        context.lineTo(155,65);
+        context.lineTo(155,30);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(210,30);
+        context.lineTo(210,70);
+        context.strokeStyle="magenta";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(160,70);
+        context.lineTo(160,85);
+        context.lineTo(210,85);
+        context.strokeStyle="magenta";
+        context.stroke();
+        /*민*/
+        /*박상민*/
+    </script>
+</body>
+</html>
