@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover로 자유롭게 그리기
+    </title>
+    <style>
+    </style>
+</head>
+<body>
+    <h3>mouseover로 자유롭게 그리기</h3>
+    <hr>
+    선굵기 :<input id="widthInput" type="number" value="1">
+    선 색 :<input id="colorInput" type="color" value="#000000">
+    <br>
+    <canvas id="myCanvas" width="500" height="500" style="background-color: aliceblue;"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let context = canvas.getContext("2d");
+
+    canvas.addEventListener("mousemove", function (e) {
+        move(e);
+    }, false);
+
+    canvas.addEventListener("mouseover", function(e){
+        over(e);
+    })
+
+    canvas.addEventListener("mouseout", function(e){
+        out(e);
+    });
+
+    let widthInput = document.getElementById("widthInput");
+    let colorInput = document.getElementById("colorInput");
+
+    widthInput.addEventListener("input", function () {
+        context.lineWidth = this.value;
+    });
+    colorInput.addEventListener("input", function () {
+        context.strokeStyle = this.value;
+    });
+
+    let startX = 0, startY = 0;
+    let dragging = false;
+
+    function draw(curX, curY) {
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(curX, curY);
+        context.stroke();
+    }
+
+    function move(e) {
+        if (!dragging) return;
+        let curX = e.offsetX;
+        let curY = e.offsetY;
+        draw(curX, curY);
+        startX = curX;
+        startY = curY;
+    }
+
+    function over(e) {
+        startX = e.offsetX;
+        startY = e.offsetY;
+        dragging = true;
+    }
+
+    function out(e) {
+        dragging = false;
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오륜기 그리기</title>
+    <script>
+        function drawCircle(ctx, x, y, radius, color){
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+    </script>
+</head>
+<body>
+    <h3>오륜기 그리기</h3>
+    <hr>
+    <canvas id="myCanvas" width="300" height="220" style="background-color: aliceblue;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        drawCircle(context, 75, 100, 40, "blue");
+        drawCircle(context, 115, 140, 40, "yellow");
+        drawCircle(context, 155, 100, 40, "black");
+        drawCircle(context, 195, 140, 40, "green");
+        drawCircle(context, 235, 100, 40, "red");
+    </script>
+</body>
+</html>

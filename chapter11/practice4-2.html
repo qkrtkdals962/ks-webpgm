@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진과 이름 출력</title>
+</head>
+<body>
+    <h3>사진과 이름 출력</h3>
+    <hr>
+    <canvas id="myCanvas" width="700" height="500" style="background-color: aliceblue;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        let img = new Image();
+        img.src = "MyPicture.png";
+        img.onload = function() {
+            ctx.drawImage(img, 70, 50, 250, 200);
+            ctx.font = "italic 50px forte";
+            ctx.strokeStyle = "blue";
+            ctx.linewidth = 3;
+            ctx.fillStyle = "magenta";
+            ctx.fillText("박상민", 300, 270);
+            ctx.strokeText("박상민",300, 270);
+        };
+    </script>
+</body>
+</html>
