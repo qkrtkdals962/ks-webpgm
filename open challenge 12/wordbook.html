@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 단어장 모두 출력</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: left;
+            background-color: aliceblue;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        td:first-child {
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h3>나의 단어장 모두 출력</h3>
+    <hr>
+    <table>
+        <tbody id="wordList"></tbody>
+    </table>
+    <script>
+        // 단어 리스트 출력
+        function showWordList() {
+            if (!window.sessionStorage) {
+                alert("이 브라우저는 sessionStorage를 지원하지 않습니다.");
+                return;
+            }
+
+            const wordList = document.getElementById("wordList");
+            wordList.innerHTML = ""; // 초기화
+
+            let count = 0;
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                const value = sessionStorage.getItem(key);
+
+                // 번호, 영어, 한글 단어 출력
+                const row = document.createElement("tr");
+                const cell1 = document.createElement("td");
+                cell1.innerText = count + 1;
+                const cell2 = document.createElement("td");
+                cell2.innerText = key;
+                const cell3 = document.createElement("td");
+                cell3.innerText = value;
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                row.appendChild(cell3);
+                wordList.appendChild(row);
+
+                count++;
+            }
+
+            if (count === 0) {
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+                cell.setAttribute("colspan", "3");
+                cell.innerText = "저장된 단어가 없습니다.";
+                row.appendChild(cell);
+                wordList.appendChild(row);
+            }
+        }
+
+        // 페이지 로드 시 단어 리스트 출력
+        window.onload = showWordList;
+    </script>
+</body>
+</html>

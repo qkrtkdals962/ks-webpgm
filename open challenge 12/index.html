@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 단어장 만들기</title>
+</head>
+<body>
+    <h3>나의 단어장 만들기</h3>
+    <hr>
+    영어 <input id="en" type="text" width="25px" value="">
+    <br>
+    한글 <input id="ko" type="text" width="25px" value="">
+    <br>
+    <br>
+    <input type="button" onclick="save()" value="단어 저장">
+    <input type="button" onclick="search()" value="영단어 검색">
+    <input type="button" onclick="del()" value="단어 삭제">
+    <input type="button" onclick="show()" value="전체 보기">
+    <script>
+        let enInput = document.getElementById("en");
+        let koInput = document.getElementById("ko");
+        function save(){
+            if (!window.sessionStorage) {
+                alert("이 브라우저는 sessionStorage를 지원하지 않습니다.");
+                return;
+            }
+            const en = enInput.value.trim();
+            const ko = koInput.value.trim();
+
+            if (en === "" || ko === "") {
+                alert("영어와 한글 단어를 입력하세요.");
+                return;
+            }
+
+            if (sessionStorage.getItem(en)) {
+                if (confirm(en + " 단어가 이미 존재합니다. 수정하시겠습니까?")) {
+                    sessionStorage.setItem(en, ko);
+                }
+            } else {
+                sessionStorage.setItem(en, ko);
+                alert("단어가 저장되었습니다.");
+            }
+        }
+        function search() {
+            const en = enInput.value.trim();
+            if (en === "") {
+                alert("검색할 영단어를 입력하세요.");
+                return;
+            }
+
+            const ko = sessionStorage.getItem(en);
+            if (ko) {
+                koInput.value = ko;
+            } else {
+                alert(en + " 단어가 존재하지 않습니다.");
+            }
+        }
+        function del(){
+            const en = enInput.value.trim();    
+            if (en === "") {
+                alert("삭제할 영단어를 입력하세요.");
+                return;
+            }
+
+            if (sessionStorage.getItem(en)) {
+                sessionStorage.removeItem(en);
+                alert(en + " 단어가 삭제되었습니다.");
+            } else {
+                alert(en + " 단어가 존재하지 않습니다.");
+            }
+        }
+        function show(){
+            window.open("wordbook.html", "_blank");
+        }
+    </script>
+</body>
+</html>
